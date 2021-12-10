@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.modelmapper.ModelMapper;
+
+import br.com.wgsolution.msproduct.entity.dto.ProductDTO;
 import lombok.Data;
 
 @Data
@@ -30,5 +33,8 @@ public class Product implements Serializable{
 	
 	@Column(name = "price", nullable = false, length = 10)
 	private Double price;
-
+	
+	public static Product createProduct(ProductDTO dto) {
+		return new ModelMapper().map(dto, Product.class);
+	}
 }
