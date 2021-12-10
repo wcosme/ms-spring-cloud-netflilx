@@ -1,8 +1,10 @@
 package br.com.wgsolution.msproduct.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import br.com.wgsolution.msproduct.entity.Product;
 import br.com.wgsolution.msproduct.entity.dto.ProductDTO;
 import br.com.wgsolution.msproduct.repository.ProductRepository;
 import br.com.wgsolution.msproduct.services.ProductService;
@@ -13,8 +15,13 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 
-	public ProductDTO create(ProductDTO prod) {
-		return null;
+	public ProductDTO create(ProductDTO dto) {
+		ProductDTO productDTORetorno = ProductDTO.createProduct(productRepository.save(Product.createProduct(dto)));
+		return productDTORetorno;
+		
+	}
+	
+	public Page<ProductDTO> findAll(){
 		
 	}
 
