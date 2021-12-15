@@ -28,7 +28,7 @@ import br.com.wgsolution.msproduct.entity.dto.ProductDTO;
 import br.com.wgsolution.msproduct.services.ProductService;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/v1/product")
 public class ProductController {
 
 	@Autowired
