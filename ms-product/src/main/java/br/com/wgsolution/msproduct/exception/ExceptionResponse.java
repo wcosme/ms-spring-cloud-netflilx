@@ -4,10 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-@Data
+import lombok.Setter;
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExceptionResponse implements Serializable {

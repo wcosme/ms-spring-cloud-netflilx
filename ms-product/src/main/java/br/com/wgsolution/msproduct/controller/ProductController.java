@@ -77,8 +77,8 @@ public class ProductController {
 
 	}
 
-	@PutMapping(produces = { "application/json", "application/xml", "application/x-yml" }, 
-				consumes = {"application/json", "application/xml", "application/x-yml" })
+	@PutMapping(produces = { "application/json", "application/xml", "application/x-yml"}, 
+				consumes = {"application/json", "application/xml", "application/x-yml"})
 	public ProductDTO update(@RequestBody ProductDTO productDTO) {
 
 		ProductDTO dto = productService.update(productDTO);
